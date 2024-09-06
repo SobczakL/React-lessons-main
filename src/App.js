@@ -11,6 +11,10 @@ import EffectsNoDependency from './components/useeffect/EffectNoDep';
 import EffectsDemoTwoStates from './components/useeffect/EffectNoDepTwoState';
 import EffectsDemoInfiniteLoop from './components/useeffect/EffectTwoEffectsInfinite';
 import EffectCleanUpParent from './components/useeffect/cleanup/EffectCleanUpParent';
+import UseMemoExpensive from './components/usememo/UseMemoExpensive';
+import UseRefBasic from './components/useref/UseRefBasic';
+import UseRefMutableVals from './components/useref/UseRefMutVal';
+import UseRefState from './components/useref/UseRefState';
 
 function App() {
   return (
@@ -36,6 +40,14 @@ function App() {
       {/* <EffectsDemoInfiniteLoop /> */}
       {/* <EffectCleanUpParent/> */}
       {/* <EffectFetchData/> */}
+
+      {/* UseRef */}
+      {/* <UseRefBasic /> */}
+      {/* <UseRefMutableVals/> */}
+      {/* <UseRefState /> */}
+
+      {/* UseMemo */}
+      <UseMemoExpensive/>
     </div>
   );
 }
