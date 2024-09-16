@@ -21,6 +21,10 @@ import Home from "./components/reactRouter/pages/Home";
 import About from "./components/reactRouter/pages/About";
 import Contact from "./components/reactRouter/pages/Contact";
 import Users from "./components/reactRouter/pages/Users";
+import Dashboard from "./components/reactRouter/pages/nested/Dashboard";
+import Profile from "./components/reactRouter/pages/nested/Profile";
+import Settings from "./components/reactRouter/pages/nested/Settings";
+import NavigateLogin from "./components/reactRouter/pages/NavigateLogin";
 function App() {
   return (
     <Router>
@@ -64,17 +68,23 @@ function App() {
           paddingLeft: "20px"
         }}
         >
-          <Link to="/">Home</Link>
+          <Link to="/Home">Home</Link>
           <Link to="/About">About</Link>
           <Link to="/Contact">Contact</Link>
           <Link to="/Users">Users</Link>
+          <Link to="/Dashboard">Dashboard</Link>
 
         </nav>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<NavigateLogin />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/About" element={<About/>} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Users/:id" element={<Users />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="profile" element={<Profile />} />
+            <Route path="settings" element={<Settings />} />
+        </Route>
         </Routes>
       </div>
     </Router>
